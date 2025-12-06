@@ -9,8 +9,8 @@ This project implements a deep learning solution for the White Balance Regressio
 * Adaptation: The model's final classification head was replaced with a Linear Regression Head with two outputs.
 ### 1.2 Multi-Stage Training Methodology
 Training was strategically executed in two phases to maximize both stability and final precision:
-* Phase 1: Generalization ($\mathbf{256 \times 256}$): Initial training at a lower resolution to quickly establish robust, generalized features and stable convergence principles.
-* Phase 2: Fine-Tuning ($\mathbf{384 \times 384}$): Loading the best checkpoint from Phase 1 and resuming training at a higher resolution. A very low learning rate ($\mathbf{1e-5}$) was crucial here to ensure weight adjustments were minimal and precise, focusing on capturing fine-grained color details.
+* Phase 1: Generalization 256 x 256: Initial training at a lower resolution to quickly establish robust, generalized features and stable convergence principles.
+* Phase 2: Fine-Tuning 384 x 384: Loading the best checkpoint from Phase 1 and resuming training at a higher resolution. A very low learning rate ($\mathbf{1e-5}$) was crucial here to ensure weight adjustments were minimal and precise, focusing on capturing fine-grained color details.
 ### 1.3 Key Optimization Decisions
 |Component|Setting/Decision             |Impact/Rationale|
 |---------|-----------------------------|----------------|
@@ -36,9 +36,9 @@ Final Performance
 
 
 ## Finding: Stability vs. Accuracy
-A critical decision point involved managing the risk of overfitting during the $\mathbf{384 \times 384}$ fine-tuning:
+A critical decision point involved managing the risk of overfitting during the 384 x 384 fine-tuning:
 * **Risk**: Aggressive fine-tuning at high resolution with a low learning rate can lead to memorization of dataset noise.
-* **Mitigation**: The robust $\mathbf{256 \times 256}$ checkpoint (model_new_woo.pth) was maintained as a reliable fallback. The final submission model was selected based on the checkpoint demonstrating the best combination of low validation error and high stability.
+* **Mitigation**: The robust 256 x 256 checkpoint (model_new_woo.pth) was maintained as a reliable fallback. The final submission model was selected based on the checkpoint demonstrating the best combination of low validation error and high stability.
 
 ## 💻 4. Hybrid Execution Environment
 The project leveraged a hybrid hardware setup to successfully execute demanding training runs despite local limitations.
