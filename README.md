@@ -50,8 +50,10 @@ The project leveraged a hybrid hardware setup to successfully execute demanding 
 # 🔗 Project Assets and Resources
 |Resource|Link                         |
 |--------|-----------------------------|
+|GITHUB REPO|https://github.com/pratim4dasude/White_Balance|
 |Google Colab Notebook|https://colab.research.google.com/drive/12sXPSsn9JcrgueQHW_Q1JD2RYpnGL0oA?usp=sharing|
 |Full Dataset|https://www.kaggle.com/datasets/pratimdasude/white-balance-dataset|
 |Trained Model Checkpoint|https://www.kaggle.com/models/pratimdasude/white-balance-models|
+|Presentation |https://docs.google.com/presentation/d/1WOGKSqtsjmK3JTbsLaNnZ4QDZAyHV8ZbvDM5H73XmpU/edit?usp=sharing|
 
 
