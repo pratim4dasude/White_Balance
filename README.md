@@ -18,8 +18,6 @@ Training was strategically executed in two phases to maximize both stability and
 |Augmentations|ColorJitter                  |Essential for teaching the model color invariance. Randomly altering colors forces the model to learn the intrinsic scene illumination, ignoring spurious color noise.|
 |Prediction Handling|Clipping and Rounding        |Final predictions are clipped to the valid range (1500 K to 10000 K) and rounded to the nearest integer to meet common formatting requirements.|
 
-
-
 ## 📈 2. Project Outcomes and Performance
 The model's success is measured by the Mean Absolute Error (MAE) between the predicted and ground-truth parameters.
 Final Performance
@@ -27,12 +25,22 @@ Final Performance
 * Temp MAE: **575.46**
 * Tint MAE: **6.03**
 * Avg MAE:  **290.75**
+
+## 📊 3. Performance Visualizations: Training and Fine-Tuning Graphs
+
+### model Performance Graph for Training Dataset
+<img width="1389" height="390" alt="model_tarin_graph" src="https://github.com/user-attachments/assets/f936fe2b-74e0-437f-b701-88196c977ad3" />
+
+### Fine-Tuning model Performance Graph for Training Dataset
+<img width="1389" height="390" alt="finetune_train_graph" src="https://github.com/user-attachments/assets/4ceaff0d-d753-4f95-84af-2a6cfb63309b" />
+
+
 ## Finding: Stability vs. Accuracy
 A critical decision point involved managing the risk of overfitting during the $\mathbf{384 \times 384}$ fine-tuning:
 * **Risk**: Aggressive fine-tuning at high resolution with a low learning rate can lead to memorization of dataset noise.
 * **Mitigation**: The robust $\mathbf{256 \times 256}$ checkpoint (model_new_woo.pth) was maintained as a reliable fallback. The final submission model was selected based on the checkpoint demonstrating the best combination of low validation error and high stability.
 
-## 💻 3. Hybrid Execution Environment
+## 💻 4. Hybrid Execution Environment
 The project leveraged a hybrid hardware setup to successfully execute demanding training runs despite local limitations.
 |Environment|GPU                          |Purpose|Optimization                                                                                    |
 |-----------|-----------------------------|-------|------------------------------------------------------------------------------------------------|
